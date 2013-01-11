@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Coin Toss</string>
+    <string name="coin">Coin</string>
+    <string name="heads">HEADS</string>
+    <string name="tails">TAILS</string>
+    <string name="flip_coin">Flip Coin</string>
+
+</resources>
