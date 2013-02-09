@@ -21,10 +21,6 @@
       <artifactId>android</artifactId>
     </dependency>
     <dependency>
-      <groupId>de.akquinet.android.androlog</groupId>
-      <artifactId>androlog</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.nineoldandroids</groupId>
       <artifactId>library</artifactId>
       <version>2.4.0</version>
