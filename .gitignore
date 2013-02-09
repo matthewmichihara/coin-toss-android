@@ -1,5 +1,6 @@
 # Maven
 target/
+gen-external-apklibs/
 
 # Intellij project files
 *.iml

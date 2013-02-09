@@ -1,8 +1,5 @@
 package com.fourpool.cointoss.android;
 
-import java.util.Random;
-
-import android.app.Activity;
 import android.content.Context;
 import android.hardware.SensorManager;
 import android.os.Bundle;
@@ -11,13 +8,15 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import com.actionbarsherlock.app.SherlockActivity;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorListenerAdapter;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 import com.squareup.seismic.ShakeDetector;
 
-public class MainActivity extends Activity implements ShakeDetector.Listener {
+import java.util.Random;
+
+public class MainActivity extends SherlockActivity implements ShakeDetector.Listener {
     private final Random mRandom = new Random();
     private ImageView mIvCoin;
     private TextView mTvText;
@@ -27,6 +26,8 @@ public class MainActivity extends Activity implements ShakeDetector.Listener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         mIvCoin = (ImageView) findViewById(R.id.iv_coin);
         mTvText = (TextView) findViewById(R.id.tv_heads_or_tails);

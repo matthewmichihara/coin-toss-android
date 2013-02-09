@@ -6,19 +6,20 @@
   <parent>
     <groupId>com.fourpool</groupId>
     <artifactId>coin-toss-android-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>4.0</version>
   </parent>
 
   <groupId>com.fourpool</groupId>
   <artifactId>coin-toss-android</artifactId>
-  <version>1.0-SNAPSHOT</version>
   <packaging>apk</packaging>
-  <name>coin-toss-android - Application</name>
+  <name>Coin Toss for Android</name>
 
   <dependencies>
     <dependency>
       <groupId>com.google.android</groupId>
       <artifactId>android</artifactId>
+      <scope>provided</scope>
+      <version>${android.version}</version>
     </dependency>
     <dependency>
       <groupId>com.nineoldandroids</groupId>
@@ -29,6 +30,12 @@
       <groupId>com.squareup</groupId>
       <artifactId>seismic</artifactId>
       <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.actionbarsherlock</groupId>
+      <artifactId>actionbarsherlock</artifactId>
+      <version>4.2.0</version>
+      <type>apklib</type>
     </dependency>
   </dependencies>
 
