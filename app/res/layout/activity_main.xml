@@ -1,9 +1,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity" >
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_intro_text"
+        android:text="@string/intro_text"
+        style="@android:style/TextAppearance.Large"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"/>
 
     <ImageView
         android:id="@+id/iv_coin"
@@ -13,7 +24,8 @@
         android:contentDescription="@string/coin"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:src="@drawable/heads" />
+        android:visibility="gone"
+        android:src="@drawable/heads"/>
 
     <TextView
         android:id="@+id/tv_heads_or_tails"
@@ -21,13 +33,13 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingBottom="10dp"
-        android:text="@string/heads"
-        android:textSize="50sp" />
+        android:visibility="gone"
+        android:textSize="50sp"/>
 
     <Button
         android:id="@+id/btn_flip_coin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/flip_coin" />
+        android:text="@string/flip_coin"/>
 
 </LinearLayout>

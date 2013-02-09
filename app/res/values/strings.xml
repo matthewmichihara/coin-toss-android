@@ -6,5 +6,6 @@
     <string name="heads">HEADS</string>
     <string name="tails">TAILS</string>
     <string name="flip_coin">Flip Coin</string>
+    <string name="intro_text">Shake me or press the button!</string>
 
 </resources>
