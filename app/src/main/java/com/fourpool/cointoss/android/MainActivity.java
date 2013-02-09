@@ -55,14 +55,14 @@ public class MainActivity extends SherlockActivity implements ShakeDetector.List
         // Prevent multiple button clicks during a coin flip.
         mBtnFlipCoin.setEnabled(false);
 
-        final int i = mRandom.nextInt(2);
+        final boolean isHeads = mRandom.nextBoolean();
 
         ViewPropertyAnimator.animate(mIvCoin).setDuration(500)
                 .rotationYBy(1440)
                 .setListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationEnd(Animator arg0) {
-                        if (i == 0) {
+                        if (isHeads) {
                             mTvText.setText(R.string.heads);
                         } else {
                             mTvText.setText(R.string.tails);
@@ -74,7 +74,7 @@ public class MainActivity extends SherlockActivity implements ShakeDetector.List
 
                     @Override
                     public void onAnimationStart(Animator arg0) {
-                        if (i == 0) {
+                        if (isHeads) {
                             mIvCoin.setImageResource(R.drawable.heads);
                         } else {
                             mIvCoin.setImageResource(R.drawable.tails);
