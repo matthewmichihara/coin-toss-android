@@ -5,11 +5,12 @@
   <parent>
     <groupId>com.fourpool</groupId>
     <artifactId>coin-toss-android-parent</artifactId>
-    <version>4.0</version>
+    <version>4.1-SNAPSHOT</version>
   </parent>
 
   <groupId>com.fourpool</groupId>
   <artifactId>coin-toss-android</artifactId>
+  <version>4.0</version>
   <packaging>apk</packaging>
   <name>Coin Toss for Android</name>
 
