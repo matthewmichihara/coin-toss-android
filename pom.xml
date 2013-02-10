@@ -8,10 +8,33 @@
   <packaging>pom</packaging>
   <name>Coin Toss for Android parent POM project</name>
 
-  <modules>
-    <module>app</module>
-    <module>integration-tests</module>
-  </modules>
+  <profiles>
+    <profile>
+      <!-- the standard profile runs the instrumentations tests -->
+      <id>standard</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <modules>
+        <module>app</module>
+        <module>integration-tests</module>
+      </modules>
+    </profile>
+    <profile>
+      <!-- the release profile does sign, zipalign... but does not run instrumentation tests -->
+      <id>release</id>
+      <!-- via this activation the profile is automatically used when the release is done with the maven release -->
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <modules>
+        <module>app</module>
+      </modules>
+    </profile>
+  </profiles>
 
   <properties>
     <android.version>4.1.1.4</android.version>
