@@ -24,6 +24,9 @@ public class MainActivity extends SherlockActivity implements ShakeDetector.List
     private Button mBtnFlipCoin;
     private volatile boolean mShakeInProgress = false;
 
+    private static final int FLIP_ANIMATION_DURATION = 500;
+    private static final int FLIP_ANIMATION_ROTATION_Y_BY = 1440;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,8 +74,8 @@ public class MainActivity extends SherlockActivity implements ShakeDetector.List
 
         final boolean isHeads = mRandom.nextBoolean();
 
-        ViewPropertyAnimator.animate(mIvCoin).setDuration(500)
-                .rotationYBy(1440)
+        ViewPropertyAnimator.animate(mIvCoin).setDuration(FLIP_ANIMATION_DURATION)
+                .rotationYBy(FLIP_ANIMATION_ROTATION_Y_BY)
                 .setListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationStart(Animator arg0) {

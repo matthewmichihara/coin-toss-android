@@ -1,12 +1,12 @@
 package com.fourpool.cointoss.android.test;
 
 import android.test.ActivityInstrumentationTestCase2;
-import com.fourpool.cointoss.android.*;
+import com.fourpool.cointoss.android.MainActivity;
 
 public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActivity> {
 
     public MainActivityTest() {
-        super(MainActivity.class); 
+        super(MainActivity.class);
     }
 
     public void testActivity() {
