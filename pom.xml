@@ -3,7 +3,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <version>4.0</version>
+  <version>4.0-SNAPSHOT</version>
   <groupId>com.fourpool</groupId>
   <artifactId>coin-toss-android-parent</artifactId>
   <packaging>pom</packaging>
@@ -17,6 +17,12 @@
   <properties>
     <android.version>4.0.1.2</android.version>
   </properties>
+
+  <scm>
+    <connection>scm:git:git://github.com/matthewmichihara/coin-toss-android.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/matthewmichihara/coin-toss-android.git</developerConnection>
+    <url>https://github.com/matthewmichihara/coin-toss-android</url>
+  </scm>
 
   <build>
     <pluginManagement>
