@@ -38,6 +38,7 @@
 
   <properties>
     <android.version>4.1.1.4</android.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <scm>
