@@ -1,5 +1,6 @@
 # Maven
 target/
+**pom.xml.releaseBackup
 gen-external-apklibs/
 
 # Intellij project files

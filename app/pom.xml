@@ -44,7 +44,6 @@
       <plugin>
         <groupId>com.jayway.maven.plugins.android.generation2</groupId>
         <artifactId>android-maven-plugin</artifactId>
-        <extensions>true</extensions>
       </plugin>
     </plugins>
   </build>
@@ -52,6 +51,13 @@
   <profiles>
     <profile>
       <id>release</id>
+      <!-- Via this activation the profile is automatically used when the release is done with the maven release plugin -->
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
       <build>
         <plugins>
           <plugin>
@@ -64,9 +70,19 @@
                   <goal>sign</goal>
                   <goal>verify</goal>
                 </goals>
+                <configuration>
+                  <removeExistingSignatures>true</removeExistingSignatures>
+                  <archiveDirectory />
+                  <keystore>${sign.keystore}</keystore>
+                  <alias>${sign.alias}</alias>
+                  <storepass>${sign.storepass}</storepass>
+                  <keypass>${sign.keypass}</keypass>
+                  <verbose>true</verbose>
+                </configuration>
               </execution>
             </executions>
           </plugin>
+          <!-- The signed apk then needs to be zipaligned -->
           <plugin>
             <groupId>com.jayway.maven.plugins.android.generation2</groupId>
             <artifactId>android-maven-plugin</artifactId>
@@ -88,6 +104,9 @@
               <sign>
                 <debug>false</debug>
               </sign>
+              <manifest>
+                <debuggable>false</debuggable>
+              </manifest>
             </configuration>
           </plugin>
           <plugin>
@@ -96,9 +115,9 @@
             <configuration>
               <artifacts>
                 <artifact>
-                  <file>${project.build.directory}/proguard_map.txt</file>
-                  <type>map</type>
-                  <classifier>release</classifier>
+                  <file>${project.build.directory}/${project.artifactId}-${project.version}-signed-aligned.apk</file>
+                  <type>apk</type>
+                  <classifier>signed-aligned</classifier>
                 </artifact>
               </artifacts>
             </configuration>
@@ -116,5 +135,4 @@
       </build>
     </profile>
   </profiles>
-
 </project>
